@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/assets/css/test.css">
+  </head>
+  <body>
+    <h1 class="a">Test4</h1>
+but does it autobuild?
+<p>this is a test</p>
+
+<style>
+  html{
+    background-color: orange;
+  }
+
+  .nav-icon, .nav-icon-click {
+    margin: 1em;
+    width: 40px;
+  }
+
+  .nav-icon:after,
+  .nav-icon:before,
+  .nav-icon div,
+  .nav-icon-click:after,
+  .nav-icon-click:before,
+  .nav-icon-click div {
+    background-color: #fff;
+    border-radius: 3px;
+    content: '';
+    display: block;
+    height: 5px;
+    margin: 7px 0;
+    transition: all .2s ease-in-out;
+  }
+  .nav-icon-click:before {
+    transform: translateY(12px) rotate(135deg);
+  }
+
+  .nav-icon-click:after {
+    transform: translateY(-12px) rotate(-135deg);
+  }
+
+  .nav-icon-click div {
+    transform: scale(0);
+  }
+
+</style>
+
+<a style="display:block;" class="nav-icon" id="hamburger" onclick="transition()">
+  <div></div>
+</a>
+
+<script>
+  function transition(){
+    var elt = document.getElementById('hamburger')
+    if(elt.className == "nav-icon"){
+      elt.className = "nav-icon-click"
+    }
+    else{
+      elt.className = "nav-icon"
+    }
+  }
+
+</script>
+
+  </body>
+</html>
