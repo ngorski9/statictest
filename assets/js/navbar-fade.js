@@ -15,6 +15,7 @@ function collapseMenu(){
 
 function hamburgerClick(){
   if( !expanded ){
+    mobile_nav.className = "";
     expanded = true
     body.className = "menu-expand";
     setTimeout( () => { content_wrapper.className = "hide"; }, 500);

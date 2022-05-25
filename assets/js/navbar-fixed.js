@@ -15,10 +15,6 @@ var transparent_navbar_color = (typeof(transparent_navbar_color) === "undefined"
 
 transparent_navbar = (typeof(transparent_navbar) === "undefined") ? false : transparent_navbar;
 
-window.addEventListener('resize', function(event){
-  set_breakpoint_y();
-}, true)
-
 function set_navbar_to_normal(){
   navbar.style.transition = "inherit";
   if(transparent_navbar){
@@ -53,14 +49,12 @@ function set_navbar_to_fixed(){
 
 function set_breakpoint_y (){
   if ( ! (breakpoint_id === "") ){
-    breakpoint_y = document.getElementById(breakpoint_id).offsetTop;
+    breakpoint_y = document.getElementById(breakpoint_id).getBoundingClientRect().top;
   }
   else{
     breakpoint_y = -1
   }
 }
-
-set_breakpoint_y();
 
 if(breakpoint_y == -1){
   navbar.style.position = "fixed";
@@ -71,6 +65,19 @@ else{
   set_navbar_to_normal()
 }
 
+// set breakpoint when page resizes
+window.addEventListener('resize', function(event){
+  set_breakpoint_y();
+}, true)
+
+//set breakpoint when page loads
+document.addEventListener('readystatechange', function(event){
+    if (event.target.readyState === "complete") {
+        set_breakpoint_y();
+    }
+});
+
+// on scrolling, save last scroll position and check breakpoints
 window.addEventListener('scroll', function(event){
   // store the last scroll position
   if(!expanded){
