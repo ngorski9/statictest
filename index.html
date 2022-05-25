@@ -3,67 +3,180 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="./assets/css/test.css">
+    <link rel="stylesheet" href="./assets/css/skeleton-and-normalize.css" />
+    <link rel="stylesheet" href="./assets/css/site.css" />
   </head>
-  <body>
-    <h1 class="a">Test4</h1>
-<p class="a">but does it autobuild?</p>
-<p>this is a test</p>
+  <body id="body">
+    <div id="navbar-pad"></div>
+<div id="navbar" class="navbar">
+  <div class="container">
+    <h3 id="title" style="margin: 0px;letter-spacing: 1px;">
+      website
+    </h3>
 
-<style>
-  html{
-    background-color: orange;
-  }
+    <!-- desktop navbar content -->
+    <div id="desktop-navbar-options">
+      <a>intro</a>
+      <a>code</a>
+      <a>examples</a>
+    </div>
 
-  .nav-icon, .nav-icon-click {
-    margin: 1em;
-    width: 40px;
-  }
+    <a id="hamburger" onclick="hamburgerClick()">
+      <div id="hamburger-top"></div>
+      <div id="hamburger-middle"></div>
+      <div id="hamburger-bottom"></div>
+    </a>
 
-  .nav-icon:after,
-  .nav-icon:before,
-  .nav-icon div,
-  .nav-icon-click:after,
-  .nav-icon-click:before,
-  .nav-icon-click div {
-    background-color: #fff;
-    border-radius: 3px;
-    content: '';
-    display: block;
-    height: 5px;
-    margin: 7px 0;
-    transition: all .2s ease-in-out;
-  }
-  .nav-icon-click:before {
-    transform: translateY(12px) rotate(135deg);
-  }
+  </div>
+</div>
 
-  .nav-icon-click:after {
-    transform: translateY(-12px) rotate(-135deg);
-  }
+<div id="mobile-navbar-options" class="back">
+    <a>intro</a>
+    <a>code</a>
+    <a>examples</a>
+</div>
 
-  .nav-icon-click div {
-    transform: scale(0);
-  }
-
+    <div id="content-wrapper">
+      <style>
+.hero-content{
+  color: white;
+}
+button.hero-content{
+  color: black;
+  background-color: white;
+}
 </style>
+<div class="hero-wrapper-full" style="background-image:url(assets/images/airplanes.jpg)">
+  
+    
+      <div class="hero-mute" style="opacity:0.7;background-color:black"></div>
+    
+  
+  <div class="hero">
+      
+        <h1 class="hero-content">Hero title</h1>
+      
+      
+        <div class="hero-content">Hero subtitle</div>
+      
+      
+        <button class="hero-content">Button text</button>
+      
+  </div>
+</div>
 
-<a style="display:block;" class="nav-icon" id="hamburger" onclick="transition()">
-  <div></div>
-</a>
+<div class="container">
+  <p>top!</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p id="header-break">This is the breakpoint</p>
+  <script>var breakpoint_id = "header-break"; var transparent_navbar_color = "rgba(0,0,0,0.5)";</script>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+  <p>abc</p>
+</div>
 
-<script>
-  function transition(){
-    var elt = document.getElementById('hamburger')
-    if(elt.className == "nav-icon"){
-      elt.className = "nav-icon-click"
-    }
-    else{
-      elt.className = "nav-icon"
-    }
-  }
-
-</script>
-
+    </div>
   </body>
 </html>
+<script src="assets/js/navbar-fade.js"></script>
+<script src="assets/js/navbar-fixed.js"></script>

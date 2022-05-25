@@ -1,0 +1,63 @@
+html, body { height: 100%; font-size: 16px; letter-spacing: 0.1rem; }
+
+.hide { display: none; }
+
+#content-wrapper { min-height: 100%; background-color: lightblue; }
+
+a { color: white; }
+
+a:hover { color: grey; }
+
+.back { z-index: -1; }
+
+.front { z-index: 2; }
+
+.navbar { top: 0px; left: 0px; position: static; color: white; background-color: black; border-bottom: inherit; width: 100%; font-variant: small-caps; padding: 1.1em 0 1em 0; z-index: 3; transition: top 0.2s ease-in-out; }
+
+.navbar .container { display: flex; align-items: center; justify-content: space-between; z-index: 3; }
+
+.navbar .container:after { display: none; }
+
+#desktop-navbar-options { display: none; }
+
+#hamburger { width: 30px; display: block; }
+
+#hamburger:hover { cursor: pointer; }
+
+#hamburger div { background-color: white; border-radius: 3px; content: ''; display: block; height: 4px; margin: 6px 0; transition: all .2s ease-in-out; }
+
+.menu-expand #hamburger-top { transform: translateY(10px) rotate(135deg); }
+
+.menu-expand #hamburger-middle { transform: scale(0); }
+
+.menu-expand #hamburger-bottom { transform: translateY(-10px) rotate(-135deg); }
+
+@media screen and (min-width: 1000px) { #hamburger { display: none; } #desktop-navbar-options { display: flex; } #desktop-navbar-options a { margin-left: 1em; } #desktop-navbar-options:first { margin-left: 0em; } }
+
+#mobile-navbar-options { position: fixed; top: 0px; height: 100%; width: 100%; background-color: black; opacity: 0; transition: opacity .5s ease-in-out; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+
+#mobile-navbar-options a { font-size: 2em; }
+
+.menu-expand .navbar { border-bottom: initial; margin-bottom: 1px; }
+
+.menu-expand #mobile-navbar-options { opacity: 1; }
+
+.hero-wrapper-aspect { position: relative; background-color: green; width: 100%; padding-top: 75%; }
+
+@media screen and (min-width: 1000px) { .hero-wrapper-aspect { background-color: orange; padding-top: 56.25%; } }
+
+.hero-wrapper-full { position: relative; background-color: black; width: 100%; height: 100vh; }
+
+.hero, .hero-mute { position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; }
+
+.hero-mute { z-index: 1; }
+
+.hero { z-index: 2; display: flex; background-position: center; align-items: center; justify-content: center; flex-direction: column; }
+
+.hero:first { margin-top: 0; }
+
+.hero-content { opacity: 1; margin-bottom: 0; margin-top: 1rem; }
+
+div.hero-content { font-size: 2rem; }
+
+/*# sourceMappingURL=site.css.map */
