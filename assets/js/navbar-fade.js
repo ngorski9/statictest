@@ -10,14 +10,13 @@ function collapseMenu(){
   content_wrapper.className = "";
   expanded = false
   setTimeout( () => { window.scrollBy(0, last_y_before_expand ) }, 10 );
-  setTimeout( () => { mobile_nav.className = "back"; }, 500 );
+  setTimeout( () => { mobile_nav.className = "hide"; }, 500 );
 }
 
 function hamburgerClick(){
   if( !expanded ){
     expanded = true
     body.className = "menu-expand";
-    mobile_nav.className = "front";
     setTimeout( () => { content_wrapper.className = "hide"; }, 500);
   }
   else{
