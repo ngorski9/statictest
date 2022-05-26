@@ -42,7 +42,7 @@ a:hover { color: grey; }
 
 .menu-expand #mobile-navbar-options { opacity: 1; }
 
-.hero-wrapper-full, .hero-wrapper-aspect { width: 100%; background-size: auto; background-position: center; position: relative; }
+.hero-wrapper-full, .hero-wrapper-aspect { width: 100%; background-size: cover; background-position: center; position: relative; }
 
 .hero-wrapper-aspect { padding-top: 75%; }
 
