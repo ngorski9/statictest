@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <link rel="stylesheet" href="./assets/css/skeleton-and-normalize.css" />
     <link rel="stylesheet" href="./assets/css/site.css" />
@@ -17,11 +18,33 @@
     <!-- desktop navbar content -->
     <div id="desktop-navbar-options">
       
-        <a href="/">home</a>
+        
+          <div class="desktop-menu-dropdown desktop-navbar-option">
+            <div class="sub-menu-title">home</div>
+            <div class="sub-menu-wrapper">
+              <div class="sub-menu">
+                <div class="sub-menu-background"></div>
+                <div class="sub-menu-options">
+                
+                  <a href="link1">sub1</a>
+                
+                  <a href="link2">sub2</a>
+                
+                  <a href="broken">longer sub name</a>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        
       
-        <a href="/examples.html">examples</a>
+        
+          <a class="desktop-navbar-option" href="/examples.html">examples</a>
+        
       
-        <a href="/contact.html">contact</a>
+        
+          <a class="desktop-navbar-option" href="/contact.html">contact</a>
+        
       
     </div>
 
@@ -36,39 +59,145 @@
 
 <div id="mobile-navbar-options" class="hide">
   
-    <a href="/">home</a>
   
-    <a href="/examples.html">examples</a>
+    
+      <div class="mobile-menu-dropdown" id="mobile-dropdown-0" onclick="mobile_dropdown(0)">
+        <div>+ home</div>
+        
+          <a href="link1">sub1</a>
+        
+          <a href="link2">sub2</a>
+        
+          <a href="broken">longer sub name</a>
+        
+      </div>
+    
+
+    
   
-    <a href="/contact.html">contact</a>
+    
+      <a href="/examples.html">examples</a>
+    
+
+    
+  
+    
+      <a href="/contact.html">contact</a>
+    
+
+    
   
 </div>
 
     <div id="content-wrapper">
       <style>
-.hero-content{
-  color: white;
-}
 button.hero-content{
   color: black;
   background-color: white;
 }
+
+</style>
+
+
+
+
+
+
+
+
+<!-- custom style for the hero -->
+<style>
+
+  
+
+  
+     .hero-mute{
+      opacity: 0.1;
+      
+      background-color: black;
+      
+    }
+  
+
+  
+     .hero{
+      align-items: center;
+    }
+  
+
+  
+    @media and (min-width: 1000px){
+       .hero-mute{
+        opacity: 0.5;
+      }
+    }
+  
+
+  
+     .hero-color {
+      color: white;
+    }
+  
+
+  
+     .hero-title{
+      font-size: 2.5rem;
+    }
+  
+
+  
+    @media screen and (min-width: 1000px){
+       .hero-title{
+        font-size: 5rem;
+      }
+    }
+  
+
+  
+     .hero-content{
+      font-size: 1.5rem;
+    }
+  
+
+  
+    @media screen and (min-width: 1000px){
+       .hero-content{
+        font-size: 2.5rem;
+      }
+    }
+  
+
+  
+     .hero-button{
+      
+        color: black;
+      
+      
+        background-color: white;
+      
+      
+    }
+  
+
 </style>
 
 <div class=hero-wrapper-full style="background-image:url(assets/images/airplanes.jpg)">
   
     
-      <div class="hero-mute" style="opacity:0.35;background-color:black"></div>
+      <div class="hero-mute" style="opacity:0.1;background-color:black"></div>
     
   
-  <div class="hero">
+  <div class="container hero">
       
         
-  <div class="container">
-    <h1 class="hero-content">Hi, I'm Nathan</h1>
-    <div class="hero-content">and I'm a web designer</div>
-  </div>
-  
+          <div class="hero-color hero-title">Hero Image Title</div>
+        
+        
+          <div class="hero-color hero-content">The hero image subtitle.</div>
+        
+        
+          <button class="hero-color hero-button">Button text</button>
+        
       
   </div>
 </div>
@@ -96,7 +225,7 @@ button.hero-content{
   <p>abc</p>
   <p>abc</p>
   <p id="header-break">This is the breakpoint</p>
-  <script>var breakpoint_id = "header-break"; var transparent_navbar_color = "rgba(0,0,0,0.5)";</script>
+  <script>var breakpoint_id = "header-break"; var navbar_has_height = false; var navbar_top_background = "rgba(0,0,0,0)"; var navbar_hover_color_top = "black"</script>
   <p>abc</p>
   <p>abc</p>
   <p>abc</p>

@@ -3,41 +3,46 @@ navbar_is_normal = true
 const nav = document.getElementById('navbar');
 const navbar_pad = document.getElementById('navbar-pad')
 const navbar_background = window.getComputedStyle( navbar , null ).getPropertyValue('background-color');
+const desktop_navbar_options = document.getElementsByClassName("desktop-navbar-option");
 
 var breakpoint_id = (typeof(breakpoint_id) === "undefined") ? "" : breakpoint_id;
+var navbar_top_background = (typeof(navbar_top_background) === "undefined") ? navbar_background : navbar_top_background
+var navbar_has_height = (typeof(navbar_has_height) === "undefined") ? true : navbar_has_height;
+var navbar_hover_color_top = (typeof(navbar_hover_color_top) === "undefined") ? "" : navbar_hover_color_top;
 
-var transparent_navbar;
-if( !(typeof(transparent_navbar_color) === "undefined" )){
-  transparent_navbar = true;
+if(navbar_hover_color_top != ""){
+  document.querySelector(":root").style.setProperty("--navbar-hover-color-top", navbar_hover_color_top);
+
 }
-
-var transparent_navbar_color = (typeof(transparent_navbar_color) === "undefined") ? "rgba(0,0,0,0)" : transparent_navbar_color;
-
-transparent_navbar = (typeof(transparent_navbar) === "undefined") ? false : transparent_navbar;
 
 function set_navbar_to_normal(){
   navbar.style.transition = "inherit";
-  if(transparent_navbar){
-    navbar.style.position = "absolute";
-    navbar.style["background-color"] = transparent_navbar_color;
-  }
-  else{
-    navbar.style.position = "static";
-  }
+  navbar.style.position = "absolute";
+  navbar.style["background-color"] = navbar_top_background;
   navbar.style.top = "0px";
-  navbar_pad.style.height = "0px";
-  last_y_stop = window.scrollY;
+
+  if(navbar_hover_color_top != ""){
+    for(var i = 0; i < desktop_navbar_options.length; i++){
+      desktop_navbar_options[i].className += " desktop-navbar-option-top";
+    }
+  }
+
   navbar_is_normal = true;
 }
 
 function set_navbar_to_fixed(){
   navbar.style.position = "fixed";
+  navbar.style["background-color"] = navbar_background;
   navbar.style.top = "-" + navbar.offsetHeight.toString() + "px"
-  if(!transparent_navbar){
-    navbar_pad.style.height = navbar.offsetHeight;
-  }
-  else{
-    navbar.style["background-color"] = navbar_background;
+
+  if(navbar_hover_color_top != ""){
+    for(var i = 0; i < desktop_navbar_options.length; i++){
+      var class_name = desktop_navbar_options[i].className;
+      var position = name.search("desktop-navbar-option-top");
+      if(position != -1){
+        desktop_navbar_options[i].className = class_name.substring(0,position);
+      }
+    }
   }
 
   setTimeout( () => {
@@ -47,14 +52,19 @@ function set_navbar_to_fixed(){
   navbar_is_normal = false;
 }
 
-function set_breakpoint_y (){
+function setup (){
   if ( ! (breakpoint_id === "") ){
     breakpoint_y = document.getElementById(breakpoint_id).getBoundingClientRect().top;
+    if(navbar_has_height){
+      navbar_pad.style.height = navbar.offsetHeight.toString() + "px";
+    }
   }
   else{
     breakpoint_y = -1
   }
 }
+
+setup();
 
 if(breakpoint_y == -1){
   navbar.style.position = "fixed";
@@ -67,13 +77,13 @@ else{
 
 // set breakpoint when page resizes
 window.addEventListener('resize', function(event){
-  set_breakpoint_y();
+  setup();
 }, true)
 
 //set breakpoint when page loads
 document.addEventListener('readystatechange', function(event){
     if (event.target.readyState === "complete") {
-        set_breakpoint_y();
+        setup();
     }
 });
 
@@ -83,6 +93,7 @@ window.addEventListener('scroll', function(event){
   if(!expanded){
     last_y_before_expand = window.scrollY;
   }
+
   if(breakpoint_y > -1){
     if(window.scrollY > navbar.offsetHeight && navbar_is_normal){
       // if the navbar should be set to fixed
