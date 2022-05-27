@@ -89,10 +89,6 @@ document.addEventListener('readystatechange', function(event){
 
 // on scrolling, save last scroll position and check breakpoints
 window.addEventListener('scroll', function(event){
-  // store the last scroll position
-  if(!expanded){
-    last_y_before_expand = window.scrollY;
-  }
 
   if(breakpoint_y > -1){
     if(window.scrollY > navbar.offsetHeight && navbar_is_normal){
